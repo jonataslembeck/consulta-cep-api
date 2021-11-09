@@ -9,7 +9,7 @@ Funcionalidade: Consultar CEP
 
   Cenario: Consulta CEP inexistente
     Dado informo um cep inexistente e realizo a consulta
-    Entao deve retornar um badrequest
+    Entao deve retornar um bad request
 
   Cenario: Consulta CEP com formato invalido
     Dado que o usuario inseri um CEP com formato invalido e consulta o servico
