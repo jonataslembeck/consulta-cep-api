@@ -81,7 +81,7 @@ public class ConsultaCepSteps {
                         .get("80.420-120/json/");
     }
 
-    @Entao("deve retornar um badrequest")
+    @Entao("deve retornar um bad request")
     public void deveRetornarUmBadrequest() {
         response
                 .then()
