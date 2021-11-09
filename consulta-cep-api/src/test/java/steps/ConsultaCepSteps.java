@@ -29,15 +29,15 @@ public class ConsultaCepSteps {
     // ######### Cenario: Consulta CEP valido #########
 
 
-    @Dado("que o usuario inseri um CEP valido e consulta o servico")
-    public void queOUsuarioInseriUmCEPValidoEConsultaOServico() {
+    @Dado("que informo um cep valido e realizo a consulta")
+    public void queInformoUmCepValidoERealizoAConsulta() {
         response =
                 when()
                         .get("91060900/json/");
     }
 
-    @Entao("e retornado o CEP, logradouro, complemento, bairro, localidade, uf e ibge.")
-    public void eRetornadoOCEPLogradouroComplementoBairroLocalidadeUfEIbge() {
+    @Entao("deve retornar o CEP, logradouro, complemento, bairro, localidade, uf e ibge")
+    public void deveRetornarOCEPLogradouroComplementoBairroLocalidadeUfEIbge() {
         response
                 .then()
                 .statusCode(HttpStatus.SC_OK)
@@ -55,8 +55,8 @@ public class ConsultaCepSteps {
     // ######### Cenario: Consulta CEP inexistente #########
 
 
-    @Dado("que o usuario inseri um CEP que nao exista na base dos Correios e consulta o servico")
-    public void queOUsuarioInseriUmCEPQueNaoExistaNaBaseDosCorreiosEConsultaOServico() {
+    @Dado("informo um cep inexistente e realizo a consulta")
+    public void informoUmCepInexistenteERealizoAConsulta() {
         response =
                 when()
                         .get("9100/json/");
@@ -81,8 +81,8 @@ public class ConsultaCepSteps {
                         .get("80.420-120/json/");
     }
 
-    @Entao("e retornado uma mensagem de erro")
-    public void eRetornadoUmaMensagemDeErro() {
+    @Entao("deve retornar um badrequest")
+    public void deveRetornarUmBadrequest() {
         response
                 .then()
                 .contentType("text/html; charset=utf-8")
@@ -100,8 +100,8 @@ public class ConsultaCepSteps {
                         .get(url);
     }
 
-    @Entao("deve retornar um array com CEP, logradouro, complemento, bairro, localidade, uf e ibge")
-    public void deveRetornarUmArrayComCEPLogradouroComplementoBairroLocalidadeUfEIbge() {
+    @Entao("deve retornar os dados da cidade Gravatai")
+    public void deveRetornarOsDadosDaCidadeGravatai() {
         response
                 .then()
                 .statusCode(HttpStatus.SC_OK)
