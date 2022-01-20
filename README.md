@@ -1,5 +1,5 @@
 ## Tecnologias utilizadas
-- java, restassured, api, cucumber, allure report
+- java, restassured, gherkin, cucumber, allure report
 
 ## Gerar relatório Allure
 - Possuir Allure report instalado
